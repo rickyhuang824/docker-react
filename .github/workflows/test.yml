@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker build -t test-image -f Dockerfile.dev .
-      - run: docker run -e CI=true test-image npm run test
+      - run: docker run test-image npm run test
