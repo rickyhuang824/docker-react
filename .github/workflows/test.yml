@@ -1,0 +1,16 @@
+name: test-actions
+
+run-name: ${{github.user}} is testing Github test-actions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t test-image -f Dockerfile.dev .
+      - run: docker run -e CI=true test-image npm run test
