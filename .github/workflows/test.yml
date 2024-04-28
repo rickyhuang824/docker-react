@@ -1,6 +1,6 @@
 name: test-actions
 
-run-name: ${{github.user}} is testing Github test-actions
+run-name: ${{ github.actor }} is testing Github test-actions
 
 on:
   push:
